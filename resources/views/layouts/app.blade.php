@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('head')
 
-    <title>Laravel</title>
+    <title>@yield('title')</title>
 </head>
-<body class="bg-gray-800 flex flex-col h-screen justify-between">
-    @yield('header')
 
-    @yield('content')
+<body class="text-blueGray-800 antialiased">
+
+    @yield('navigation')
+
+    <main>
+        @yield('main')
+    </main>
 
     @yield('footer')
+
 </body>
+
+@yield('script')
+
 </html>

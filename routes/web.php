@@ -25,7 +25,10 @@ Route::get('/landing', function () {
     return view('landing.index');
 })->name('landing');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/adminTest', function () {
+    return view('admin.dashboardTest');
+})->name('adminTest');
+// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
