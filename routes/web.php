@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 
 /*
@@ -25,11 +28,17 @@ Route::get('/landing', function () {
     return view('landing.index');
 })->name('landing');
 
-Route::get('/adminTest', function () {
-    return view('admin.dashboardTest');
-})->name('adminTest');
-// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
-Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::post('/logout', [LogutController::class, 'index'])->name('logout')->middleware('auth');
+
+
+Route::prefix('admin')->group(function(){
+    Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
+});
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);

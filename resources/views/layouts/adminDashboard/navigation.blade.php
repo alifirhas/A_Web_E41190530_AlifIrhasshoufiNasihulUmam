@@ -96,12 +96,15 @@
                             class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
                         Profile Page</a>
                 </li>
+                @guest
                 <li class="items-center">
-                    <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                        href="{{ route('admin.login') }}"><i
-                            class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
-                        Login</a>
+                  <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                      href="{{ route('login') }}"><i
+                          class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
+                      Login</a>
                 </li>
+                @endguest
+                
                 <li class="items-center">
                     <a class="text-blueGray-300 text-xs uppercase py-3 font-bold block" href="#pablo"><i
                             class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>
