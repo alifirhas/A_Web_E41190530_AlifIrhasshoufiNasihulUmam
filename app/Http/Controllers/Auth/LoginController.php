@@ -19,8 +19,10 @@ class LoginController extends Controller
         ]);
         
         //masukkan user
-        auth()->attempt($request->only('username', 'password'));
-
+        $credential = auth()->attempt($request->only('username', 'password'));
+        if(!$credential){
+            return back()->with('status', 'invalid login details');
+        }; 
         //kembalikan ke landing page
         return redirect()->route('landing');
     }

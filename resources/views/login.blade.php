@@ -50,12 +50,18 @@ Login | Tailwind Starter Kit by Creative Tim
             </div>
             <form method="POST" action="{{ route('login') }}">
               @csrf
+              @if (session()->has('status'))
+                <div class="bg-red-500 p-4 rounded-lg mb-4 text-white text-center">
+                    {{ session('status') }}
+                </div>
+               @endif
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
                   for="grid-password">Username</label>
                   <input type="username" name="username"
                   class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                  placeholder="Username" style="transition: all 0.15s ease 0s;" />
+                  placeholder="Username" style="transition: all 0.15s ease 0s;" 
+                  value="{{ old('username') }}"/>
                 @error('username')
                   <div class="text-red-600 mt-2 text-sm">
                       {{ $message }}
@@ -68,7 +74,7 @@ Login | Tailwind Starter Kit by Creative Tim
                   <input type="password" name="password"
                   class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                   placeholder="Password" style="transition: all 0.15s ease 0s;" />
-                  @error('email')
+                  @error('password')
                     <div class="text-red-600 mt-2 text-sm">
                         {{ $message }}
                     </div>
@@ -85,7 +91,7 @@ Login | Tailwind Starter Kit by Creative Tim
                 <button
                   class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
                   type="submit" style="transition: all 0.15s ease 0s;">
-                  Sign In
+                  Log In
                 </button>
               </div>
             </form>
