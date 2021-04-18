@@ -9,7 +9,7 @@
 @endsection
 
 @section('title')
-Dashboard | Tailwind Starter Kit by Creative Tim
+Dashboard | ADMIN S POST
 @endsection
 
 @section('navigation')

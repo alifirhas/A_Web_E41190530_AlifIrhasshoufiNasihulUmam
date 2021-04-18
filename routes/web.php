@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogutController;
 use App\Http\Controllers\Admin\AdminController;
@@ -20,7 +21,6 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 */
 
 Route::get('/', function () {
-    // return view('home');
     return redirect()->route('landing');
 })->name('home');
 
@@ -36,9 +36,20 @@ Route::post('/logout', [LogutController::class, 'index'])->name('logout')->middl
 
 Route::prefix('admin')->group(function(){
     Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('users', [AdminController::class, 'users'])->name('admin.users');
 
-    Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/profile/{user:username}', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::delete('/profile/{user}', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+Route::get('/profile/update/{user}', [ProfileController::class, 'profileEdit'])->name('profile.edit')->middleware('auth');
+Route::put('/profile', [ProfileController::class, 'put'])->name('profile.put');
+
+
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login']);
+
+
+Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
+Route::post('/dashboard', [PostController::class, 'store']);

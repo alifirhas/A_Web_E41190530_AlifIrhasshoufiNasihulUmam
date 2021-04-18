@@ -9,7 +9,7 @@
 @endsection
 
 @section('title')
-Landing | Tailwind Starter Kit by Creative Tim
+Landing | S POST
 @endsection
 
 @section('navigation')

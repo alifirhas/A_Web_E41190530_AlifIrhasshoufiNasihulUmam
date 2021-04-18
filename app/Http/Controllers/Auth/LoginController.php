@@ -22,8 +22,14 @@ class LoginController extends Controller
         $credential = auth()->attempt($request->only('username', 'password'));
         if(!$credential){
             return back()->with('status', 'invalid login details');
-        }; 
+        };
+
+        $roles = auth()->user()->roles;
+        // dd($roles);
         //kembalikan ke landing page
+        if ($roles == 1 || $roles == 0) {
+            return redirect()->route('admin.dashboard');
+        }
         return redirect()->route('landing');
     }
 }
