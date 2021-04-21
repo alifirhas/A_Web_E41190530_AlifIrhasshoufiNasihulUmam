@@ -27,89 +27,93 @@ Users | ADMIN S POST
 @section('main')
 
 <div class="flex flex-wrap mt-4">
-	<div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
-		<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-			<div class="rounded-t mb-0 px-4 py-3 border-0">
-				<div class="flex flex-wrap items-center">
-					<div class="relative w-full px-4 max-w-full flex-grow flex-1">
-						<h3 class="font-semibold text-base text-blueGray-700">
-							Users List
-						</h3>
-					</div>
-					<div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-						<button
-							class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
-							type="button" style="transition:all .15s ease">
-							See all
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="block w-full overflow-x-auto">
-				<!-- Projects table -->
-				<table class="items-center w-full bg-transparent border-collapse">
-					<thead>
-						<tr>
-							<th
-								class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								No.
-							</th>
-							<th
-								class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Name
-							</th>
-							<th
-								class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Username
-							</th>
-							<th
-								class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Email
-							</th>
-							<th
-								class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Post count
-							</th>
-							<th colspan="2"
-								class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Action
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						@for ($i = 1; $i < 8; $i++) <tr>
-							<th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-								{{ $i }}
-							</th>
-							<th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-								/argon/
-							</th>
-							<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								4,569
-							</td>
-							<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								340
-							</td>
-							<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
+  <div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+      <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="flex flex-wrap items-center">
+          <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+            <h3 class="font-semibold text-base text-blueGray-700">
+              Users List
+            </h3>
+          </div>
+          <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+            <button
+              class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+              type="button" style="transition:all .15s ease">
+              See all
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="block w-full overflow-x-auto">
+        <!-- Projects table -->
+        <table class="items-center w-full bg-transparent border-collapse">
+          <thead>
+            <tr>
+              <th
+                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                No.
+              </th>
+              <th
+                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                Name
+              </th>
+              <th
+                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                Username
+              </th>
+              <th
+                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                Email
+              </th>
+              <th
+                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                Post count
+              </th>
+              <th colspan="2"
+                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $i = 1; ?>
+            @foreach ($users as $user)
+            <tr>
 
-							<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<button
-									class="bg-blue-200 text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
-									type="button" style="transition: all 0.15s ease 0s;">
-									{{-- <i class="fas fa-arrow-alt-circle-down"></i> --}} More
-								</button>
-							</td>
-							@endfor
+              <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                {{ $i }}
+              </th>
+              <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                {{ $user->name }}
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                {{ $user->username }}
+              </td>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                {{ $user->email }}
+              </td>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                {{-- <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> --}}
+                {{ $user->posts->count() }}
+              </td>
+  
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                <button
+                  class="bg-blue-200 text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+                  type="button" style="transition: all 0.15s ease 0s;">
+                  <i class="fas fa-arrow-alt-circle-down"></i> More
+                </button>
+              </td>
+            </tr>
+            <?php $i++; ?>
+            @endforeach
 
-
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
 </div>
 
@@ -120,7 +124,7 @@ Users | ADMIN S POST
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" charset="utf-8"></script>
 <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
 <script type="text/javascript">
-	/* Sidebar - Side navigation menu on mobile/responsive mode */
+  /* Sidebar - Side navigation menu on mobile/responsive mode */
     function toggleNavbar(collapseID) {
       document.getElementById(collapseID).classList.toggle("hidden");
       document.getElementById(collapseID).classList.toggle("bg-white");
